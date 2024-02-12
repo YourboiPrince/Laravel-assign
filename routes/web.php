@@ -43,7 +43,11 @@ Route::get('/destinations', function () {
 })->name('destinations');
 
 // Blog routes
-Route::get('/blog', [BlogController::class, 'dashboard'])->name('blog.dashboard');
+// Route::get('/blog', [BlogController::class, 'dashboard'])->name('blog.dashboard');
+Route::get('/blog', function () {
+    return view('index');
+});
+
 Route::resource('blogs', BlogController::class);
 
 require __DIR__.'/auth.php';
