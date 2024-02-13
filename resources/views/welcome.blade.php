@@ -100,7 +100,7 @@
         </div>
         <nav>
             <a href="#" class="text-white">Destinations</a>
-            <a href="#" class="text-white">Blog</a>
+            <a href="{{ route('blogs.index') }}" class="text-white">Blog</a>
             <a href="#" class="text-white">About</a>
             @if (Route::has('login'))
                 @auth
