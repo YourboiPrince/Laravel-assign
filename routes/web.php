@@ -3,6 +3,8 @@
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LeadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +18,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('posts', PostController::class);
-// Route::get('/dashboard', function () { return view('dashboard'); })->
+Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 
+Route::resource('leads', LeadController::class); // Added LeadController resource route
+Route::get('/leads/create', [LeadController::class, 'create'])->name('leads.create'); // Added lead create route
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,7 +37,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Laravel, Destinations, Blog, About, Login links
 Route::get('/laravel', function () {
     return view('laravel');
 })->name('laravel');
@@ -42,12 +45,12 @@ Route::get('/destinations', function () {
     return view('destinations');
 })->name('destinations');
 
-// Blog routes
-// Route::get('/blog', [BlogController::class, 'dashboard'])->name('blog.dashboard');
 Route::get('/blog', function () {
     return view('index');
 });
 
 Route::resource('blogs', BlogController::class);
+Route::get('/blogs/create', [BlogController::class, 'create'])->name('blogs.create');
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 
 require __DIR__.'/auth.php';
