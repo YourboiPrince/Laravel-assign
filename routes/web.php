@@ -5,7 +5,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LeadController;
+use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,9 @@ Route::get('/posts/create', [PostController::class, 'create'])->name('posts.crea
 
 Route::resource('leads', LeadController::class); // Added LeadController resource route
 Route::get('/leads/create', [LeadController::class, 'create'])->name('leads.create'); // Added lead create route
+
+Route::resource('quotes', QuoteController::class); // Added QuoteController resource route
+Route::get('/quotes/create', [QuoteController::class, 'create'])->name('quotes.create'); // Added quote create route
 
 Route::get('/', function () {
     return view('welcome');
@@ -52,5 +57,8 @@ Route::get('/blog', function () {
 Route::resource('blogs', BlogController::class);
 Route::get('/blogs/create', [BlogController::class, 'create'])->name('blogs.create');
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+
+Route::resource('contacts', ContactController::class); // Added ContactController resource route
+Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create'); // Added contact create route
 
 require __DIR__.'/auth.php';
