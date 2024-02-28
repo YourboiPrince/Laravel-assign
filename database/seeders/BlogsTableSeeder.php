@@ -17,5 +17,6 @@ class BlogsTableSeeder extends Seeder
 
 
         Blog::factory(10)->create();
+        
     }
 }

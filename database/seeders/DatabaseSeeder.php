@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         // ]);
             Post::factory(10)->create();
             // Blog::factory(10)->create();
+            
             // Task::factory(10)->create();
     }
 }

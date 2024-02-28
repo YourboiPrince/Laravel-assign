@@ -18,5 +18,6 @@ class Deals_stagesTableSeeder extends Seeder
 
 
         Deal_stage::factory(10)->create();
+        $this->call(RolesAndPermissionsSeeder::class);
     }
 }

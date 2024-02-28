@@ -16,5 +16,6 @@ class OrganizationsTableSeeder extends Seeder
         \App\Models\User::factory(10)->create();
 
         Organization::factory(10)->create();
+        
     }
 }

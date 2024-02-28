@@ -17,5 +17,6 @@ class LeadsTableSeeder extends Seeder
 
 
         Lead::factory(10)->create();
+        
     }
 }

@@ -11,6 +11,10 @@
     <!-- Poppins Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Blade Heroicons -->
+    @php
+        use BladeUI\Icons\Factory;
+    @endphp
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -26,8 +30,12 @@
             <div>
                 <input type="text" class="border border-gray-300 p-2" placeholder="Search quotes">
             </div>
+            <!-- Add a link to the create route using mustache syntax -->
             <a href="{{ route('quotes.create') }}"
-                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add Quote</a>
+                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                @svg('tabler-quotes') <!-- Use it as a directive -->
+                Add Quote
+            </a>
         </div>
         <table class="table-auto mx-auto">
             <thead>
@@ -54,14 +62,20 @@
                         <td class="px-4 py-2">{{ $quote->status }}</td>
                         <td class="px-4 py-2">
                             <a href="{{ route('quotes.show', $quote->id) }}"
-                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Show</a>
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                @svg('heroicon-s-eye') <!-- Use it as a directive -->
+                                Show
+                            </a>
 
                             <form action="{{ route('quotes.destroy', $quote->id) }}" method="POST"
                                 style="display: inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" onclick="showDeleteToast()"
-                                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                    @svg('heroicon-s-trash') <!-- Use it as a directive -->
+                                    Delete
+                                </button>
                             </form>
 
                             <script>

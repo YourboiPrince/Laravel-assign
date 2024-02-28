@@ -17,5 +17,6 @@ class DealsTableSeeder extends Seeder
 
 
         Deal::factory(10)->create();
+        
     }
 }

@@ -1,6 +1,7 @@
 @extends('layouts.app')
+
 @section('content')
-    {{-- use flowbite for the ui --}}
+    {{-- Use flowbite for the UI --}}
     <div class="relative overflow-x-auto">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -23,48 +24,43 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- loop through the contacts and display them -->
-                <!--check if the contacts is not empty -->
-                <!--use the isset() function to check if the contacts variable is not empty -->
-                {{-- @if (isset($contacts)) --}}
-                @if ($contacts->isEmpty())
+                {{-- Check if contacts are empty --}}
+                @forelse ($contacts as $contact)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <td class="px-6 py-4" colspan="4">
+                        <td class="px-6 py-4">
+                            {{-- Display contact first and last name --}}
+                            {{ $contact->full_name }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $contact->email }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $contact->phone }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{-- Display organization name if available --}}
+                            {{ optional($contact->organization)->name }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{-- Display contact image --}}
+                            <img src="{{ asset('images/' . $contact->image) }}" alt="{{ $contact->full_name }}"
+                                class="w-10 h-10 rounded-full">
+                        </td>
+                    </tr>
+                @empty
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <td class="px-6 py-4" colspan="5">
                             No contacts found.
                         </td>
                     </tr>
-                @else
-                    @foreach ($contacts as $contact)
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <td class="px-6 py-4">
-                                {{--  display contact first_name from the fillables --}}
-                                {{ $contact->first_name }} {{ $contact->last_name }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $contact->email }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $contact->phone }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{-- contact organization --}}
-                                {{ optional($contact->organization)->name }}
-                            </td>                            <!-- display the contact image -->
-
-                            <td class="px-6 py-4">
-                                {{-- <img src="{{  $contact->image }}" alt="{{ $contact->first_name }}"
-                                    class="w-10 h-10 rounded-full"> --}}
-                                <!--use the asset() function to generate the correct URL to the image inside the public folder -->
-                                <img src="{{ asset('images/' . $contact->image) }}" alt="{{ $contact->first_name }}"
-                                    class="w-10 h-10 rounded-full">
-                            </td>
-
-                        </tr>
-                    @endforeach
-                @endif
+                @endforelse
             </tbody>
         </table>
     </div>
-    <!--create a link to the create contact page -->
-    <a href="{{ route('contacts.create') }}" class="btn btn-primary">Add Contact</a>
+
+    <!-- Create a link to the create contact page with Blade icon -->
+    <a href="{{ route('contacts.create') }}" class="btn btn-primary">
+        @svg('ri-contacts-fill') {{-- Replace 'heroicon-s-plus' with the appropriate Blade icon name --}}
+        Add Contact
+    </a>
 @endsection

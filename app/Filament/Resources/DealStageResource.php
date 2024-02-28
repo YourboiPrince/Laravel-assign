@@ -18,7 +18,7 @@ class DealStageResource extends Resource
 {
     protected static ?string $model = Deal_stage::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'ri-exchange-fill';
 
     public static function form(Form $form): Form
     {

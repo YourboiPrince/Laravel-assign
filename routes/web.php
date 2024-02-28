@@ -19,28 +19,32 @@ use App\Http\Controllers\ContactController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::resource('posts', PostController::class);
-Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+// Route::resource('posts', PostController::class);
+// Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 
-Route::resource('leads', LeadController::class); // Added LeadController resource route
-Route::get('/leads/create', [LeadController::class, 'create'])->name('leads.create'); // Added lead create route
+// Route::resource('leads', LeadController::class); // Added LeadController resource route
+// Route::get('/leads/create', [LeadController::class, 'create'])->name('leads.create'); // Added lead create route
 
-Route::resource('quotes', QuoteController::class); // Added QuoteController resource route
-Route::get('/quotes/create', [QuoteController::class, 'create'])->name('quotes.create'); // Added quote create route
+// Route::resource('quotes', QuoteController::class); // Added QuoteController resource route
+// Route::get('/quotes/create', [QuoteController::class, 'create'])->name('quotes.create'); // Added quote create route
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
+Route::middleware(['web', 'role:admin'])->group(function () {
+    // Your routes here
 });
+
 
 Route::get('/laravel', function () {
     return view('laravel');
@@ -61,4 +65,4 @@ Route::get('/users/create', [UserController::class, 'create'])->name('users.crea
 Route::resource('contacts', ContactController::class); // Added ContactController resource route
 Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create'); // Added contact create route
 
-require __DIR__.'/auth.php';
+// require __DIR__.'/auth.php';

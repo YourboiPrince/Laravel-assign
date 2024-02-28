@@ -18,5 +18,6 @@ class ContactsTableSeeder extends Seeder
 
 
         Contact::factory(10)->create();
+        
     }
 }

@@ -17,5 +17,6 @@ class QuotesTableSeeder extends Seeder
 
 
         Quote::factory(10)->create();
+        
     }
 }
