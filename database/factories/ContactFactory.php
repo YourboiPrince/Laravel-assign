@@ -2,18 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\Contact;
+use App\Models\Organization;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Contact>
+ */
 class ContactFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
-    protected $model = Contact::class;
-
     /**
      * Define the model's default state.
      *
@@ -22,10 +18,12 @@ class ContactFactory extends Factory
     public function definition(): array
     {
         return [
-            'first_name' => $this->faker->firstName,
-            'last_name' => $this->faker->lastName,
-            'email' => $this->faker->unique()->safeEmail,
-            // You can add more attributes as needed
+                'organization_id' => Organization::factory(),
+                'first_name' => $this->faker->firstName,
+                'last_name' => $this->faker->lastName,
+                'email' => $this->faker->email,
+                'phone' => $this->faker->phoneNumber,
+                'job_title' => $this->faker->jobTitle,
         ];
     }
 }
