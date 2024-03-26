@@ -11,6 +11,10 @@
     <!-- Poppins Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Blade Heroicons -->
+    @php
+        use BladeUI\Icons\Factory;
+    @endphp
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -27,7 +31,10 @@
                 <input type="text" class="border border-gray-300 p-2" placeholder="Search tasks">
             </div>
             <a href="{{ route('tasks.create') }}"
-                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add Task</a>
+                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                @svg('vaadin-tasks') <!-- Use it as a directive -->
+                Add Task
+            </a>
         </div>
         <table class="table-auto mx-auto">
             <thead>
@@ -46,14 +53,20 @@
                         </td>
                         <td class="px-4 py-2">
                             <a href="{{ route('tasks.show', $task->id) }}"
-                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Show</a>
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                @svg('heroicon-s-eye') <!-- Use it as a directive -->
+                                Show
+                            </a>
 
                             <form action="{{ route('tasks.destroy', $task->id) }}" method="POST"
                                 style="display: inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" onclick="showDeleteToast()"
-                                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                    @svg('heroicon-s-trash') <!-- Use it as a directive -->
+                                    Delete
+                                </button>
                             </form>
 
                             <script>

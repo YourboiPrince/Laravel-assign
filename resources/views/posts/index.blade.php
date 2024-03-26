@@ -33,7 +33,7 @@
             <!-- Add a link to the create route using mustache syntax -->
             <a href="{{ route('users.create') }}"
                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                @svg('heroicon-s-user') <!-- Use it as a directive -->
+                @svg('fileicon-postscript') <!-- Use it as a directive -->
                 Add User
             </a>
         </div>

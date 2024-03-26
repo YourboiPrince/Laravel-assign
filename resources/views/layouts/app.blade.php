@@ -28,8 +28,9 @@
             @endif
 
             <!-- Page Content -->
+            @yield('content')
             <main>
-                {{ $slot }}
+                {{-- {{ $slot }} --}}
             </main>
         </div>
     </body>

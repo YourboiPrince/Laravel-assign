@@ -18,5 +18,6 @@ class TasksTableSeeder extends Seeder
 
 
         Task::factory(10)->create();
+        
     }
 }
