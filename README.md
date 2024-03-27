@@ -1,12 +1,16 @@
-Abstract:
-This abstract outlines the development of a custom Customer Relationship Management (CRM) solution for Apex Sales, a thriving B2B sales organization. The project aims to address Apex Sales' need for efficient tracking of their sales pipeline, encompassing accounts, contacts, deals, and activities. Leveraging modern technologies and best practices, the proposed CRM solution will empower Apex Sales to streamline their sales processes, enhance team collaboration, and drive business growth.
-
-Problem Statement:
-Apex Sales faces challenges in effectively managing their sales pipeline, with disparate systems hindering efficient tracking of accounts, contacts, deals, and activities. Existing solutions lack the flexibility and customization required to meet the organization's specific needs. Additionally, the absence of role-based access control and comprehensive reporting capabilities hampers data security and hinders strategic decision-making. To overcome these obstacles, Apex Sales seeks a tailored CRM solution that integrates seamlessly with their operations and provides robust features for managing their sales processes.
-
-Proposed Solution:
-The proposed solution involves the development of a custom CRM system tailored to the unique requirements of Apex Sales. Leveraging Laravel, a powerful PHP framework known for its flexibility and scalability, the CRM will offer a comprehensive suite of features including user and role management, organization and account tracking, lead management, deal tracking, activity recording, team organization, reporting, and quotes and invoices generation. The solution will prioritize ease of use, customization, and scalability to ensure seamless integration with Apex Sales' existing workflows and future expansion plans.
-
+DECLARATION.
+I, Prince Nathaniel, a student of Institute of Software Development, hereby declare that the
+project entitled "Laravel-assign" is my original work and has not been submitted for any other
+degree or examination.
+I further declare that to the best of my knowledge and belief, the content of this project does
+not infringe the intellectual property rights of any other person belonging to the diploma
+Software Development day class.
+I understand that any act of plagiarism or academic dishonesty, as defined by Institute of
+Software Development regulations, will result in severe penalties.
+Student Name: ……………………………………………………………………………………………………………………………
+Date: …………………………………………………………. Signature: ……………………………………………………………
+Supervisor Name: ………………………………………………………………………………………………………………………
+Date: …………………………………………………………. Signature: ……………………………………………………………
 
 
 Abstract:
