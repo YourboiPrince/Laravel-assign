@@ -43,5 +43,6 @@ By delivering on these key features, the proposed CRM solution will empower Apex
 
                  FLOW CHART:
                  <img width="220" alt="Capture" src="https://github.com/YourboiPrince/Laravel-assign/assets/124196763/a06fdeae-3d4b-4b6e-8476-e77718f71c3e">
+                  <img width="220" alt="Capture" src="https://github.com/YourboiPrince/Laravel-assign/assets/124196763/a06fdeae-3d4b-4b6e-8476-e77718f71c3e">
 
 
