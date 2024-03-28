@@ -42,7 +42,7 @@ By delivering on these key features, the proposed CRM solution will empower Apex
  ![Laravel ERD](https://github.com/YourboiPrince/Laravel-assign/assets/124196763/57ad7884-b2bb-466c-979d-d3bc078c8795)
 
                  FLOW CHART:
-                 <img width="220" alt="Capture" src="https://github.com/YourboiPrince/Laravel-assign/assets/124196763/a06fdeae-3d4b-4b6e-8476-e77718f71c3e">
-                  <img width="220" alt="Capture" src="https://github.com/YourboiPrince/Laravel-assign/assets/124196763/a06fdeae-3d4b-4b6e-8476-e77718f71c3e">
+               <img width="220" alt="Capture" src="https://github.com/YourboiPrince/Laravel-assign/assets/124196763/3bcf8c96-4c22-4395-9441-62d2113aecd0">
+
 
 
