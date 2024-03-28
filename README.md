@@ -38,5 +38,6 @@ Features of the Application:
 By delivering on these key features, the proposed CRM solution will empower Apex Sales to gain control over their sales pipeline, optimize their processes, and achieve sustainable growth. The project will be evaluated based on feature completeness, code quality, documentation, and the final product demo to ensure alignment with Apex Sales' objectives and expectations.
 
                 ERD DIAGRAM BELOW:
-                ![Laravel ERD](https://github.com/YourboiPrince/Laravel-assign/assets/124196763/57ad7884-b2bb-466c-979d-d3bc078c8795)
+                
+ ![Laravel ERD](https://github.com/YourboiPrince/Laravel-assign/assets/124196763/57ad7884-b2bb-466c-979d-d3bc078c8795)
 
